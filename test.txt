@@ -1,0 +1,29 @@
+// basic calculation
+entjera x = 10;
+reala y = 20;
+reala sum = x + y;
+
+// carry funciton
+funkcio aldoni(entjera x) Funkcio {
+  reveni @(entjera y) entjera {
+    reveni x + y;
+  }
+}
+Funkcio aldonDek = aldoni(10);
+entjera rezulto = aldonDek(5);
+
+// conditional branch
+entjera z = 10;
+se (z >= 20) {
+  Teksta message = "granda";
+} alie {
+  Teksta message = "malgranda";
+}
+
+// loop
+entjera i = 0;
+entjera sum = 0;
+dum (i < 10) {
+  sum = sum + i;
+  i = i + 1;
+}
