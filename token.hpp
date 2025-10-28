@@ -13,7 +13,7 @@ enum class TokenType {
   // 型
   Entjera, Reala, Teksta, Bulea, FunkcioType,
   // 演算子
-  Plus, Minus, Multiply, Divide, Assigin, Equal, NotEqual, Less, Greater, LessEqual, GreaterEqual,
+  Plus, Minus, Multiply, Divide, Assign, Equal, NotEqual, Less, Greater, LessEqual, GreaterEqual,
   // 区切り
   LParen, RParen, LBrace, RBrace, Semicolon, Comma, At, Dot,
   // その他
@@ -59,7 +59,7 @@ namespace {
     {TokenType::Minus, "Minus"},
     {TokenType::Multiply, "Multiply"},
     {TokenType::Divide, "Divide"},
-    {TokenType::Assigin, "Assigin"},
+    {TokenType::Assign, "Assign"},
     {TokenType::Equal, "Equal"},
     {TokenType::NotEqual, "NotEqual"},
     {TokenType::Less, "Less"},
@@ -155,7 +155,7 @@ public:
               value = "==";
               advance();
             } else {
-              type = TokenType::Assigin;
+              type = TokenType::Assign;
             }
             break;
           case '!':
