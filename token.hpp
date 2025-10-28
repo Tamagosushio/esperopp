@@ -11,7 +11,7 @@ enum class TokenType {
   // キーワード
   Funkcio, Klaso, Se, Alie, Dum, Reveni, Tiu, Vero, Malvero,
   // 型
-  Entjera, Reala, Teksta, Bulea, FunkcioType,
+  Entjera, Reala, Teksta, Bulea, Funkcia,
   // 演算子
   Plus, Minus, Multiply, Divide, Assign, Equal, NotEqual, Less, Greater, LessEqual, GreaterEqual,
   // 区切り
@@ -35,7 +35,7 @@ namespace {
     {"reala", TokenType::Reala},
     {"teksta", TokenType::Teksta},
     {"bulea", TokenType::Bulea},
-    {"Funkcio", TokenType::FunkcioType},
+    {"funkcia", TokenType::Funkcia},
   };
   std::map<TokenType, std::string> TokenType2Stirng = {
     {TokenType::Number, "Number"},
@@ -54,7 +54,7 @@ namespace {
     {TokenType::Reala, "Reala"},
     {TokenType::Teksta, "Teksta"},
     {TokenType::Bulea, "Bulea"},
-    {TokenType::FunkcioType, "FunkcioType"},
+    {TokenType::Funkcia, "Funkcia"},
     {TokenType::Plus, "Plus"},
     {TokenType::Minus, "Minus"},
     {TokenType::Multiply, "Multiply"},

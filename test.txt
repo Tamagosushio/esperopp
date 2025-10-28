@@ -4,12 +4,12 @@ reala y = 20;
 reala sum = x + y;
 
 // carry funciton
-funkcio aldoni(entjera x) Funkcio {
+funkcio aldoni(entjera x) funkcia {
   reveni @(entjera y) entjera {
     reveni x + y;
   }
 }
-Funkcio aldonDek = aldoni(10);
+funkcia aldonDek = aldoni(10);
 entjera rezulto = aldonDek(5);
 
 // conditional branch
