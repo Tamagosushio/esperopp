@@ -7,7 +7,7 @@ reala sum = x + y;
 funkcio aldoni(entjera x) funkcia {
   reveni @(entjera y) entjera {
     reveni x + y;
-  }
+  };
 }
 funkcia aldonDek = aldoni(10);
 entjera rezulto = aldonDek(5);
@@ -15,9 +15,9 @@ entjera rezulto = aldonDek(5);
 // conditional branch
 entjera z = 10;
 se (z >= 20) {
-  Teksta message = "granda";
+  teksta message = "granda";
 } alie {
-  Teksta message = "malgranda";
+  teksta message = "malgranda";
 }
 
 // loop

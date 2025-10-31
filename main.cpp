@@ -1,11 +1,13 @@
-# include "token.hpp"
 # include <iostream>
 # include <fstream>
 
+# include "parser.hpp"
+
 int main(int argc, char* argv[]) {
   // ファイル名取得
-  if (!argc == 2) throw std::runtime_error("<input file>");
-  std::string fileName = argv[1];
+  // if (!argc == 2) throw std::runtime_error("<input file>");
+  // std::string fileName = argv[1];
+  std::string fileName = "./test.txt";
   // ファイルオープン
   std::ifstream file;
   file.open(fileName);
@@ -28,7 +30,24 @@ int main(int argc, char* argv[]) {
   std::cout << std::endl << std::endl;
 
   Tokenizer tokenizer(content);
-  for (const Token& token : tokenizer.tokenize()) {
+  const std::vector<Token> tokens = tokenizer.tokenize();
+  for (const Token& token : tokens) {
     std::cout << std::format("{}", token) << std::endl;
   }
+
+  std::cout << std::endl;
+  for(int i = 0; i < 64; ++i) std::cout << '-';
+  std::cout << std::endl << std::endl;
+
+  Parser parser(tokens);
+  try {
+    auto program = parser.parse();
+    std::cout << program->toString() << std::endl << std::endl;
+  } catch (const std::exception& err) {
+    std::cerr << "Parse error: " << err.what() << std::endl;
+    std::cerr << parser.getCurrentPosition() << std::endl;
+    std::cerr << std::format("{}", parser.getCurrentToken()) << std::endl;
+    return 1;
+  }
+
 }
